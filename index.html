@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DevStreak 60</title>
+<style>
+:root{--bg:#f6f5f1;--sf:#fff;--ink:#16201c;--mu:#5c6b64;--ln:#e3e1d9;--ac:#0f6b4f;--as:#e1f0ea;--ao:#fff;--wm:#b45309;--ws:#fdf0dd;--sh:rgba(20,30,25,.14);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1512;--sf:#17201b;--ink:#eaf1ed;--mu:#93a59c;--ln:#26322c;--ac:#3ecf9a;--as:#16302a;--ao:#06241a;--wm:#f0a54b;--ws:#33260f;--sh:rgba(0,0,0,.5);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1512;--sf:#17201b;--ink:#eaf1ed;--mu:#93a59c;--ln:#26322c;--ac:#3ecf9a;--as:#16302a;--ao:#06241a;--wm:#f0a54b;--ws:#33260f;--sh:rgba(0,0,0,.5);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+h1,h2,h3,p{margin:0}
+.wrap{max-width:880px;margin:0 auto;padding:16px 16px 96px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--ln)}
+.hb{max-width:880px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:700;letter-spacing:-.01em;font-size:17px}
+.brand span{color:var(--ac)}
+.who{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mu)}
+.ib{background:none;border:1px solid var(--ln);border-radius:10px;padding:7px 10px;display:flex;align-items:center;gap:6px;font-size:13px;color:var(--mu)}
+svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:6;display:flex;background:var(--sf);border-top:1px solid var(--ln);padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px))}
+.nav button{flex:1;background:none;border:0;border-radius:10px;padding:6px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;color:var(--mu)}
+.nav button.on{color:var(--ac);font-weight:600}
+@media(min-width:760px){.nav{position:static;max-width:880px;margin:0 auto;border:0;background:none;padding:0 16px 8px;gap:4px}.nav button{flex:none;flex-direction:row;gap:8px;padding:8px 14px;font-size:14px}.nav button.on{background:var(--as)}.wrap{padding-bottom:40px}}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:18px;margin-bottom:14px}
+.mu{color:var(--mu)}.sm{font-size:13px}
+.chip{display:inline-block;font-size:12px;font-weight:600;border-radius:99px;padding:2px 10px;background:var(--as);color:var(--ac)}
+.chip.w{background:var(--ws);color:var(--wm)}
+.btn{display:block;width:100%;background:var(--ac);color:var(--ao);border:0;border-radius:12px;padding:13px 16px;font-weight:600;margin-top:14px}
+.btn.g{background:none;color:var(--mu);border:1px solid var(--ln)}
+.btn:disabled{opacity:.6}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.stat{background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:12px;text-align:center}
+.stat b{display:block;font-size:24px;line-height:1.2;letter-spacing:-.02em}
+.stat span{font-size:12px;color:var(--mu)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
+.seg i{display:block;height:8px;border-radius:99px;background:var(--ln);overflow:hidden}
+.seg i u{display:block;height:100%;background:var(--ac)}
+.lg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;font-size:12px;color:var(--mu);margin-top:6px}
+.kv{display:grid;grid-template-columns:64px 1fr;gap:4px 12px;margin-top:14px;font-size:14px}
+.kv b{color:var(--mu);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;padding-top:2px}
+h2.t{font-size:20px;letter-spacing:-.01em;margin:6px 0 12px}
+h3{font-size:16px}
+details{background:var(--sf);border:1px solid var(--ln);border-radius:16px;margin-bottom:12px;overflow:hidden}
+summary{list-style:none;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}
+.rule{padding:0 16px 10px;font-size:13px;color:var(--mu)}
+.sp{padding:8px 16px 2px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--mu)}
+.row{display:flex;gap:12px;align-items:center;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--ln);padding:11px 16px}
+.dn{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--ln);display:grid;place-items:center;font-size:12px;font-weight:600;color:var(--mu);flex:none}
+.row.d .dn{background:var(--ac);border-color:var(--ac);color:var(--ao)}
+.row .tx{min-width:0;flex:1}
+.row .tx b{display:block;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .tx span{display:block;font-size:13px;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.msg{background:var(--as);border-radius:16px;padding:16px 18px;margin-bottom:14px;font-weight:600;color:var(--ac)}
+.pod{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:10px;align-items:end;margin-bottom:14px}
+.pc{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:14px 8px;text-align:center;min-width:0}
+.pc.f{padding-top:22px;padding-bottom:22px;border-color:var(--ac)}
+.pc .av{margin:0 auto 8px}
+.pc b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:14px}
+.pc .k{font-size:20px;font-weight:700;margin-top:4px}
+.av{width:38px;height:38px;border-radius:50%;background:var(--as);color:var(--ac);display:grid;place-items:center;font-weight:700;flex:none}
+.rk{width:26px;text-align:center;font-weight:700;color:var(--mu);flex:none}
+.lr{display:flex;gap:12px;align-items:center;padding:12px 16px;border-top:1px solid var(--ln)}
+.lr:first-child{border-top:0}
+.lr.me{background:var(--as)}
+.lr .m{flex:1;min-width:0}
+.lr .m b{display:flex;gap:8px;align-items:center}
+.pb{height:6px;background:var(--ln);border-radius:99px;overflow:hidden;margin-top:6px}
+.pb u{display:block;height:100%;background:var(--ac)}
+.fl{font-weight:700;color:var(--wm);white-space:nowrap}
+.bd{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.bd span{font-size:13px;border:1px solid var(--ln);border-radius:99px;padding:4px 12px;color:var(--mu);opacity:.55}
+.bd span.on{opacity:1;color:var(--ac);border-color:var(--ac);background:var(--as);font-weight:600}
+.auth{max-width:400px;margin:8vh auto 0;padding:0 16px}
+.auth .card{padding:24px}
+label{display:block;font-size:13px;font-weight:600;margin-top:14px}
+input,textarea{display:block;width:100%;margin-top:6px;background:var(--bg);border:1px solid var(--ln);border-radius:10px;padding:11px 12px}
+input:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:0}
+.pin{letter-spacing:.5em;text-align:center;font-size:20px}
+.er{color:#c0392b;font-size:13px;min-height:18px;margin-top:8px}
+#sh{position:fixed;inset:0;z-index:20;background:var(--sh);display:none;align-items:flex-end;justify-content:center}
+#sh.on{display:flex}
+.sheet{background:var(--sf);width:100%;max-width:520px;max-height:92%;overflow:auto;border-radius:20px 20px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px))}
+@media(min-width:760px){#sh{align-items:center}.sheet{border-radius:20px}}
+#tt{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:99px;font-size:13px;z-index:30;display:none;max-width:90%}
+.tg{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--bg);border:1px solid var(--ln);border-radius:12px;padding:4px;margin-bottom:6px}
+.tg button{border:0;background:none;border-radius:9px;padding:9px;font-weight:600;color:var(--mu)}
+.tg button.on{background:var(--sf);color:var(--ink);box-shadow:0 1px 3px var(--sh)}
+.bn{background:var(--ws);color:var(--wm);font-size:13px;padding:8px 16px;text-align:center}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="sh"></div>
+<div id="tt"></div>
+<script type="module">
+// ====== CONFIG: paste your Firebase web app config to go live. Leave apiKey empty for demo (local) mode. ======
+const FIREBASE_CONFIG={apiKey:"AIzaSyA-ibqTcRmTfhFjAz3YHTC-18jtS5lxIbo",authDomain:"days-bfa60.firebaseapp.com",projectId:"days-bfa60",storageBucket:"days-bfa60.firebasestorage.app",messagingSenderId:"1070179992397",appId:"1:1070179992397:web:461d622268fb5686112d04"};
+// ============================================================================================================
+const LIVE=!!FIREBASE_CONFIG.apiKey;
+
+const D=[
+["How the web works: client/server, HTTP, DNS","Choose capstone idea, write 5 user stories, set up VS Code","SDLC: requirements gathering"],
+["HTML structure: headings, text, links, images","Hand-write HTML skeleton for capstone homepage","Sketch page layout on paper first"],
+["Semantic HTML, forms, tables, accessibility","Finish marking up all planned sections unstyled","Review markup against user stories"],
+["Git & GitHub: init, add, commit, push","Create capstone repo, commit & push HTML","Write README and GitHub Issues"],
+["CSS selectors, colors, typography, specificity","Style capstone header and hero section","Work on a feature branch, not main"],
+["Box model, display, positioning","Style remaining sections of capstone","Commit each section as completed"],
+["Review Day: recap Days 1-6","Fix layout bugs, merge branch via PR","Mini retrospective"],
+["Flexbox","Rebuild navigation bar and card layouts","Small, frequent commits"],
+["CSS Grid","Rebuild main layout with Grid","Update GitHub Issues board"],
+["Responsive design & media queries","Make capstone fully responsive","Ship: Checkpoint 1 on GitHub Pages"],
+["JS variables, data types, console","List real capstone data as plain JS values","Sprint 2 planning"],
+["Conditionals and loops","Write logic rules (show/hide, filter)","Break rules into small issues"],
+["Functions, scope, arrow functions","Convert logic into reusable functions","Name functions by what they do"],
+["Review Day: Array methods (map, filter, reduce)","Use array methods on capstone data","Weekly review & retro"],
+["Objects, destructuring, ES6 modules","Model capstone data as JS objects","Split code into separate modules"],
+["DOM selection and manipulation","Render object data onto the page","Commit small working steps"],
+["Events and event delegation","Implement button interactions & handlers","Link every commit to an issue"],
+["Form validation & localStorage","Implement local data persistence","Test edge cases manually"],
+["DevTools debugging, ESLint, Prettier","Identify and fix JS bugs","Review own diff before committing"],
+["Milestone: Interactive Frontend v1","Ship: capstone v1 live","Checkpoint 2: live walkthrough"],
+["Review Day: recap Days 15-20","Refactor capstone JS for clarity","Clean up code & update README"],
+["Async JS (1/3): Callbacks & promises","Rewrite one function using promises","Sprint 3 planning"],
+["Async JS (2/3): Promise chaining & errors","Practice promise chaining & .catch()","Build on Day 22 work"],
+["Async JS (3/3): async/await & fetch","Connect capstone to a real API","Document endpoint integration"],
+["REST, JSON, HTTP status codes","Test endpoints in Postman","Document consumed endpoints"],
+["Tailwind CSS","Restyle capstone with Tailwind CSS","Maintain a consistent design system"],
+["Accessibility, SEO, Lighthouse","Audit capstone & fix top 3 issues","Lighthouse quality checks"],
+["Review Day: recap Days 22-27","Refactor API integration","Weekly retro"],
+["npm, Vite, environment variables","Migrate capstone to Vite + .env","Conventional commits"],
+["Milestone: API-connected v2","Ship: capstone v2 live","Checkpoint 3: live PR walkthrough"],
+["Why React, Vite setup, JSX","Rebuild homepage as React component","Sprint 4 planning"],
+["Components and props","Decompose UI into reusable components","Component folder structure"],
+["State with useState & event handling","Add interactivity via React state","Small commits per component"],
+["Lists, conditional rendering, forms","Rebuild list and form features in React","Validate inputs before merge"],
+["Review Day: recap Days 31-34","Rebuild 1 vanilla JS feature in React (no AI)","Weekly retro"],
+["useEffect & data fetching","Fetch real data inside React components","Handle loading/error states"],
+["React Router","Convert into a multi-page SPA","Plan routes from user stories"],
+["Context API and custom hooks","Add shared global state","Refactor duplicated logic"],
+["Testing: Vitest & React Testing Library","Write unit tests for components","Set up GitHub Actions CI"],
+["Milestone: React rebuild v3","Ship: capstone v3 live with CI passing","Checkpoint 4: code walkthrough"],
+["Node.js basics, modules, npm","Plan backend API architecture","Sprint 5 planning"],
+["Review Day: recap Days 36-41","Refactor frontend React bugs","Weekly retro"],
+["Express, routing, middleware","Scaffold Express API server","Structure routes & controllers"],
+["REST API design, MVC structure","Design endpoints with OpenAPI docs","Document API endpoints"],
+["SQL, PostgreSQL, schema design","Draw ERD for backend database","Design the database before coding"],
+["CRUD with Prisma ORM & migrations","Implement database CRUD operations","Version control migrations"],
+["Validation (Zod), error handling","Harden API against invalid inputs","Test edge cases manually"],
+["Auth (1/3): Password hashing & model","Build user model and registration","Write authentication plan"],
+["Auth (2/3): JWT generation & verify","Add JWT login endpoints","Security review auth code"],
+["Auth (3/3): Route protection","Protect routes with middleware","Test protected routes manually"],
+["Security: OWASP Top 10, CORS, Helmet","Security audit backend code","Document security fixes"],
+["Connect React to API: CORS & env vars","Wire React frontend to Express API","Sprint 5 review"],
+["Frontend auth flow & protected routes","Add protected frontend routes","Safe token storage practice"],
+["TypeScript basics","Migrate 1 module to TypeScript","Use types as a quality gate"],
+["API tests: Jest & Supertest","Write API endpoint integration tests","Review test coverage report"],
+["Docker basics","Containerize backend with Dockerfile","Reproducible environments"],
+["Review Day: Full capstone bug bash","Test end-to-end, fix top 5 bugs","Weekly retro"],
+["CI/CD: GitHub Actions & deployment","Deploy API & React app to cloud","Turn feedback into issues"],
+["README, API docs, demo video","Record 2-3 min demo video & write docs","Release v1.0 with changelog"],
+["Launch & final retrospective","Go live, update CV, GitHub & LinkedIn","Capstone defense, no notes"]];
+
+const REV=[7,14,21,28,35,42,57],CHK=[10,20,30,40,60];
+const P=[{n:"Fundamentals",d:"Days 1–20",r:"AI as tutor only. Ask it to explain concepts, never to write your code."},{n:"Async & React",d:"Days 21–40",r:"Guided AI. Explain every line before you commit. Rebuild one feature a week on your own."},{n:"Fullstack Engineering",d:"Days 41–60",r:"AI as engineering partner. Generate, test, refactor and security-review all auth code."}];
+const ph=d=>Math.ceil(d/20)-1;
+const IC={t:'<path d="M4 5h16v15H4zM4 10h16M9 3v4M15 3v4"/>',r:'<path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/>',b:'<path d="M5 20V10M12 20V4M19 20v-7"/>',l:'<path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>'};
+const svg=k=>`<svg viewBox="0 0 24 24">${IC[k]}</svg>`;
+const $=s=>document.querySelector(s);
+const e=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const draw=h=>{$('#app').innerHTML=h};
+const slug=n=>n.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'.').replace(/^\.+|\.+$/g,'');
+const pl=(n,w)=>n+' '+w+(n==1?'':'s');
+function toast(m){const t=$('#tt');t.textContent=m;t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>t.style.display='none',2600)}
+async function H(s,p){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s+p));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function stats(d){const s=new Set(d||[]),a=[...s].sort((x,y)=>x-y);let b=0,r=0,p=0;for(const x of a){r=x===p+1?r+1:1;b=Math.max(b,r);p=x}const m=a.length?a[a.length-1]:0;let k=0;while(m-k>0&&s.has(m-k))k++;return{n:a.length,k,b,m}}
+
+/* ---------- Backends: Firebase (live) or localStorage (demo) ---------- */
+async function fbBackend(){
+ const V='11.6.1',S=[m=>`https://www.gstatic.com/firebasejs/${V}/firebase-${m}.js`,m=>`https://esm.sh/firebase@${V}/${m}`];
+ let M,last;for(const u of S){try{M=await Promise.all([import(u('app')),import(u('auth')),import(u('firestore'))]);break}catch(x){last=x}}
+ if(!M)throw last||new Error('Firebase SDK failed to load');
+ const[{initializeApp},A,F]=M;
+ const app=initializeApp(FIREBASE_CONFIG),auth=A.getAuth(app),fs=F.getFirestore(app);
+ const mail=n=>slug(n)+'@devstreak.app',pw=p=>'ds60-'+p;
+ const mr=id=>F.doc(fs,'members',id),lr=id=>F.doc(fs,'members',id,'private','logs');
+ async function load(id,nm){const[m,l]=await Promise.all([F.getDoc(mr(id)),F.getDoc(lr(id))]);
+  if(!m.exists()){await F.setDoc(mr(id),{name:nm,done:[],last:0});return{id,name:nm,done:[],logs:{}}}
+  const d=m.data();return{id,name:d.name,done:d.done||[],logs:(l.exists()?l.data().logs:{})||{}}}
+ return{live:true,
+  restore:()=>new Promise(res=>{const off=A.onAuthStateChanged(auth,async u=>{off();if(!u)return res(null);try{res(await load(u.uid,'Tutee'))}catch(x){res(null)}})}),
+  async register(n,p){const c=await A.createUserWithEmailAndPassword(auth,mail(n),pw(p));await F.setDoc(mr(c.user.uid),{name:n,done:[],last:0});return{id:c.user.uid,name:n,done:[],logs:{}}},
+  async login(n,p){const c=await A.signInWithEmailAndPassword(auth,mail(n),pw(p));return load(c.user.uid,n)},
+  logout:()=>A.signOut(auth),
+  watch:cb=>F.onSnapshot(F.collection(fs,'members'),s=>cb(s.docs.map(d=>({id:d.id,...d.data()}))),()=>{}),
+  async save(id,done,logs){await F.setDoc(mr(id),{done,last:Date.now()},{merge:true});await F.setDoc(lr(id),{logs})}}
+}
+function localBackend(){
+ const K='ds60-demo';let mem=null,subs=[];
+  const seed=()=>({s:null,a:[]});
+ const g=()=>{try{return JSON.parse(localStorage.getItem(K))||seed()}catch(x){return mem||seed()}};
+ const w=d=>{mem=d;try{localStorage.setItem(K,JSON.stringify(d))}catch(x){}subs.forEach(f=>f(d.a))};
+ const pub=a=>a.map(({id,name,done,last})=>({id,name,done,last}));
+ const view=a=>({id:a.id,name:a.name,done:a.done,logs:a.logs||{}});
+ return{live:false,
+  async restore(){const d=g();const a=d.a.find(x=>x.id===d.s);return a?view(a):null},
+  async register(n,p){const d=g();if(d.a.some(x=>slug(x.name)===slug(n)))throw{code:'auth/email-already-in-use'};
+   const salt=crypto.getRandomValues(new Uint32Array(4)).join('-'),a={id:'u'+Date.now(),name:n,salt,hash:await H(salt,p),done:[],last:0,logs:{}};d.a.push(a);d.s=a.id;w(d);return view(a)},
+  async login(n,p){const d=g(),a=d.a.find(x=>x.hash&&slug(x.name)===slug(n));if(!a||await H(a.salt,p)!==a.hash)throw{code:'auth/invalid-credential'};d.s=a.id;w(d);return view(a)},
+  async logout(){const d=g();d.s=null;w(d)},
+  watch(cb){const f=a=>cb(pub(a));subs.push(f);f(g().a);return()=>{subs=subs.filter(x=>x!==f)}},
+  async save(id,done,logs){const d=g(),a=d.a.find(x=>x.id===id);a.done=done;a.logs=logs;a.last=Date.now();w(d)}}
+}
+const errMsg=x=>({'auth/email-already-in-use':'That name is already registered. Add your surname or an initial.','auth/invalid-credential':'Name or PIN is incorrect.','auth/wrong-password':'Name or PIN is incorrect.','auth/user-not-found':'Name or PIN is incorrect.','auth/operation-not-allowed':'Email/Password sign-in is not enabled in Firebase yet.','auth/network-request-failed':'Network error. Check your connection.','auth/too-many-requests':'Too many attempts. Try again in a few minutes.'}[x&&x.code]||'Something went wrong. Please try again.');
+
+/* ---------- App ---------- */
+let B,me,members=[],tab='t',mode='reg',unwatch;
+(async()=>{
+ draw('<p class="auth mu">Loading…</p>');
+ try{B=LIVE?await fbBackend():localBackend()}catch(x){return draw('<div class="auth"><div class="card"><div class="brand">DevStreak <span>60</span></div><p class="mu" style="margin-top:10px">Could not connect to the server. Check your internet connection and refresh.</p><p class="er" style="word-break:break-word">'+e(x&&(x.code||x.message)||x)+'</p></div></div>')}
+ try{me=await B.restore()}catch(x){me=null}
+ me?enter():vAuth();
+})();
+
+const pinF=(id,l)=>`<label>${l}<input id="${id}" class="pin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="${id==='p1'&&mode==='in'?'current-password':'new-password'}" required></label>`;
+function vAuth(){
+ const reg=mode==='reg';
+ draw(`<div class="auth"><div class="card"><div class="brand" style="margin-bottom:16px">DevStreak <span>60</span></div>
+ <div class="tg"><button data-m="reg" class="${reg?'on':''}">Create profile</button><button data-m="in" class="${reg?'':'on'}">Sign in</button></div>
+ <form id="af"><p class="mu sm" style="margin-top:12px">${reg?'Your name appears on the cohort standings. Your PIN protects your progress.':'Sign in with the name and PIN you registered with.'}</p>
+ <label>Full name<input id="nm" required minlength="2" maxlength="40" autocomplete="name"></label>${pinF('p1',reg?'Choose a 4-digit PIN':'PIN')}${reg?pinF('p2','Confirm PIN'):''}
+ <p class="er" id="er"></p><button class="btn" style="margin-top:4px">${reg?'Start my 60 days':'Sign in'}</button></form></div></div>`);
+ document.querySelectorAll('.tg button').forEach(b=>b.onclick=()=>{mode=b.dataset.m;vAuth()});
+ $('#af').onsubmit=async ev=>{ev.preventDefault();const n=$('#nm').value.trim(),p=$('#p1').value,er=$('#er'),btn=ev.submitter;
+  if(!slug(n))return er.textContent='Enter your real name.';
+  if(!/^\d{4}$/.test(p))return er.textContent='PIN must be exactly 4 digits.';
+  if(reg&&p!==$('#p2').value)return er.textContent='PINs do not match.';
+  btn.disabled=true;er.textContent='';
+  try{me=await(reg?B.register(n,p):B.login(n,p));enter()}catch(x){er.textContent=errMsg(x);btn.disabled=false}}
+}
+function enter(){
+ tab='t';
+ draw(`${B.live?'':'<div class="bn">Demo mode: data stays on this device. Add your Firebase config to share the leaderboard.</div>'}
+ <header><div class="hb"><div class="brand">DevStreak <span>60</span></div><div class="who"><span>${e(me.name)}</span><button class="ib" id="lo">${svg('l')}<span>Sign out</span></button></div></div></header>
+ <nav class="nav">${[['t','Today'],['r','Roadmap'],['b','Standings']].map(x=>`<button data-t="${x[0]}">${svg(x[0])}${x[1]}</button>`).join('')}</nav><main class="wrap" id="v"></main>`);
+ $('#lo').onclick=async()=>{unwatch&&unwatch();await B.logout();me=null;members=[];mode='in';vAuth()};
+ document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;render();scrollTo(0,0)});
+ unwatch=B.watch(l=>{members=l;render()});
+ render();
+}
+function render(){if(!me||!$('#v'))return;document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===tab));$('#v').innerHTML={t:vToday,r:vRoad,b:vBoard}[tab]()}
+function ranked(){const L=members.filter(m=>m.id!==me.id).concat([{id:me.id,name:me.name,done:me.done}]).map(m=>({id:m.id,name:m.name||'Tutee',s:stats(m.done)})).sort((a,b)=>b.s.k-a.s.k||b.s.n-a.s.n||a.name.localeCompare(b.name));
+ L.forEach((u,i)=>{const p=L[i-1];u.rk=p&&p.s.k===u.s.k&&p.s.n===u.s.n?p.rk:i+1});return L}
+const nextDay=()=>{const s=new Set(me.done);for(let i=1;i<=60;i++)if(!s.has(i))return i;return 0};
+const tags=d=>(CHK.includes(d)?'<span class="chip w">Checkpoint</span> ':'')+(REV.includes(d)?'<span class="chip">Review</span>':'');
+
+function vToday(){
+ const st=stats(me.done),L=ranked(),rk=L.find(x=>x.id===me.id).rk,nx=nextDay(),s=new Set(me.done);
+ const seg=[0,1,2].map(i=>{let c=0;for(let d=i*20+1;d<=i*20+20;d++)if(s.has(d))c++;return`<i><u style="width:${c*5}%"></u></i>`}).join('');
+ let hero;
+ if(!nx)hero=`<div class="card"><h2 class="t">All 60 days complete 🎓</h2><p class="mu">You finished the full roadmap. Prepare your capstone defense and ship your final release.</p></div>`;
+ else{const x=D[nx-1];hero=`<div class="card"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="chip">Up next · Day ${nx}</span>${tags(nx)}</div>
+  <h2 class="t" style="margin:12px 0 0">${e(x[0])}</h2>
+  <div class="kv"><b>Build</b><span>${e(x[1])}</span><b>Habit</b><span>${e(x[2])}</span></div>
+  <button class="btn" data-day="${nx}">Log Day ${nx}</button></div>`}
+ const cp=nx?P[ph(nx)]:P[2];
+ return`<h2 class="t">${st.n?(st.k?pl(st.k,'day')+' strong. Keep going.':'Welcome back. Start a new streak today.'):'Your 60 days start here.'}</h2>${hero}
+ <div class="stats"><div class="stat"><b>${st.k}</b><span>Day streak</span></div><div class="stat"><b>${st.n}<small class="mu" style="font-size:14px">/60</small></b><span>Completed</span></div><div class="stat"><b>#${rk}</b><span>of ${L.length}</span></div></div>
+ <div class="card"><div style="display:flex;justify-content:space-between"><h3>Progress</h3><span class="mu sm">${Math.round(st.n/.6)/10}%</span></div><div class="seg">${seg}</div><div class="lg">${P.map(p=>`<span>${p.n}</span>`).join('')}</div></div>
+ <div class="card"><span class="chip">Current rule · ${cp.n}</span><p style="margin-top:10px">${cp.r}</p></div>`;
+}
+function vRoad(){
+ const s=new Set(me.done),cur=nextDay()?ph(nextDay()):2;
+ return`<h2 class="t">Roadmap</h2>`+P.map((p,i)=>{let h='',c=0;
+  for(let d=i*20+1;d<=i*20+20;d++){const x=D[d-1],dn=s.has(d);if(dn)c++;
+   if((d-1)%10==0)h+=`<div class="sp">Sprint ${Math.ceil(d/10)}</div>`;
+   h+=`<button class="row${dn?' d':''}" data-day="${d}"><span class="dn">${dn?'✓':d}</span><span class="tx"><b>${e(x[0])}</b><span>${e(x[1])}</span></span>${CHK.includes(d)?'<span class="chip w">Checkpoint</span>':REV.includes(d)?'<span class="chip">Review</span>':''}</button>`}
+  return`<details${i===cur?' open':''}><summary><span><h3>Phase ${i+1}: ${p.n}</h3><span class="mu sm">${p.d}</span></span><span class="chip">${c}/20</span></summary><p class="rule">${p.r}</p>${h}</details>`}).join('');
+}
+function vBoard(){
+ const L=ranked(),i=L.findIndex(x=>x.id===me.id),st=L[i].s;let m;
+ if(L.length==1)m='You are first on the board. Invite your cohort and set the pace.';
+ else if(!st.n)m='Complete Day 1 to start climbing the standings.';
+ else if(i==0){const g=st.k-L[1].s.k;m=g>0?`You lead the cohort by ${pl(g,'day')}. Keep the chain unbroken.`:`You are level with ${e(L[1].name)} at the top. One more day takes the lead.`}
+ else{const a=L[i-1],g=a.s.k-st.k;m=g>0?`Log ${pl(g+1,'day')} in a row to pass ${e(a.name)}.`:`Log your next day to move past ${e(a.name)}.`}
+ const B2=[['First day',st.n>=1],['7-day streak',st.b>=7],['14-day streak',st.b>=14],['30-day streak',st.b>=30],['Full 60',st.n>=60]];
+ const pod=L.length>=3?`<div class="pod">${[1,0,2].map(j=>{const u=L[j];return`<div class="pc${j==0?' f':''}"><div class="av">${e((u.name[0]||'?').toUpperCase())}</div><b>${e(u.name)}</b><div class="k">${u.s.k}<span class="mu sm"> d</span></div><span class="mu sm">#${u.rk}</span></div>`}).join('')}</div>`:'';
+ return`<h2 class="t">Cohort standings</h2><div class="msg">${m}</div>${pod}
+ <div class="card" style="padding:0;overflow:hidden">${L.map(u=>`<div class="lr${u.id===me.id?' me':''}"><span class="rk">${u.rk}</span><div class="av">${e((u.name[0]||'?').toUpperCase())}</div><div class="m"><b>${e(u.name)}${u.id===me.id?' <span class="chip">You</span>':''}</b><div class="pb"><u style="width:${u.s.n/.6}%"></u></div></div><div style="text-align:right"><div class="fl">${u.s.k?'🔥 ':''}${u.s.k}</div><div class="mu sm">${u.s.n}/60</div></div></div>`).join('')}</div>
+ <p class="mu sm" style="margin:-4px 4px 14px">Ranked by current streak, then total days completed. Everyone in the cohort appears here.</p>
+ <div class="card"><h3>Your milestones</h3><div class="bd">${B2.map(b=>`<span class="${b[1]?'on':''}">${b[1]?'✓ ':''}${b[0]}</span>`).join('')}</div></div>`;
+}
+document.addEventListener('click',ev=>{const b=ev.target.closest('[data-day]');if(b&&me)sheet(+b.dataset.day);if(ev.target.id==='sh')closeSheet()});
+const closeSheet=()=>$('#sh').classList.remove('on');
+function sheet(d){
+ const x=D[d-1],dn=me.done.includes(d),lg=(me.logs||{})[d]||{};
+ $('#sh').innerHTML=`<div class="sheet"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="chip">Day ${d}</span>${tags(d)}<span class="mu sm">Sprint ${Math.ceil(d/10)}</span></div>
+ <h2 class="t" style="margin:10px 0 0">${e(x[0])}</h2><div class="kv"><b>Build</b><span>${e(x[1])}</span><b>Habit</b><span>${e(x[2])}</span></div>
+ <label>What did you build or learn?<textarea id="nt" rows="3" maxlength="600">${e(lg.notes||'')}</textarea></label>
+ <label>GitHub commit or PR link (optional)<input id="lnk" type="url" placeholder="https://github.com/…" value="${e(lg.link||'')}"></label>
+ <button class="btn" id="sv">${dn?'Save changes':'Mark Day '+d+' complete'}</button>${dn?'<button class="btn g" id="un" style="margin-top:8px">Mark as not done</button>':''}<button class="btn g" id="cl" style="margin-top:8px;border:0">Close</button></div>`;
+ $('#sh').classList.add('on');
+ $('#cl').onclick=closeSheet;$('#sv').onclick=()=>save(d,true);if(dn)$('#un').onclick=()=>save(d,false);
+}
+async function save(d,done){
+ const t=$('#nt').value.trim(),l=$('#lnk').value.trim();
+ if(l&&!/^https?:\/\//i.test(l))return toast('Link must start with http:// or https://');
+ const set=new Set(me.done);done?set.add(d):set.delete(d);const nd=[...set].sort((a,b)=>a-b);
+ const logs={...(me.logs||{})};if(t||l)logs[d]={notes:t,link:l};else delete logs[d];
+ document.querySelectorAll('#sh .btn').forEach(b=>b.disabled=true);
+ try{await B.save(me.id,nd,logs);me.done=nd;me.logs=logs;closeSheet();render();toast(done?'Day '+d+' saved. Nice work.':'Day '+d+' marked as not done.')}
+ catch(x){document.querySelectorAll('#sh .btn').forEach(b=>b.disabled=false);toast('Could not save. Please try again.')}
+}
+</script>
+</body>
+</html>
